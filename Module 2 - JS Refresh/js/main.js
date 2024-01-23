@@ -7,7 +7,7 @@ import value from './example.js';
 
 console.log(value);
 
-// This will group multiple exports (NOT EXPORT DEFAULTS) and import it as an object from the other JS file
+// This will group ALL exports (NOT EXPORT DEFAULTS NOT INCLUDED) and import it as an object from the other JS file
 import * as objName from './example.js';
 
 console.log(objName.firstLine);
@@ -18,7 +18,7 @@ function firstFn() {
 	console.log(1 + 1);
 }
 
-//Invokes the function
+//Invokes the function. Can call function as many times as you wish.
 firstFn(); //2
 firstFn(); //2
 
@@ -26,6 +26,7 @@ firstFn(); //2
 function fnWithParams(firstNum, secondNum) {
 	console.log(firstNum, secondNum);
 }
+
 // Output
 fnWithParams(1, 2); //1 2
 fnWithParams(3, 4); //3, 4
@@ -39,8 +40,8 @@ function fnWithDefaultVal(firstNum, secondNum, thirdNum = 3) {
 // const fnWithDefaultVal = (firstNum, secondNum, thirdNum = 3) => console.log(firstNum, secondNum, thirdNum);
 
 // Output
-fnWithDefaultVal(1, 2); //1, 2, 3 - uses default value
-fnWithDefaultVal(1, 2, 4); //1, 2, 4 - overwrites default value
+fnWithDefaultVal(1, 2); //1, 2, 3 - uses DEFAULT value
+fnWithDefaultVal(1, 2, 4); //1, 2, 4 - overwrites DEFAULT value
 
 // Functions with Return Value
 function fnWithReturnVal(firstNum, secondNum) {
@@ -49,7 +50,7 @@ function fnWithReturnVal(firstNum, secondNum) {
 
 // Output
 const sumOfnum = fnWithReturnVal(2, 4);
-console.log(sumOfnum);
+console.log(sumOfnum); //6
 
 // Create a fn that accepts three values and returns the result of the operations
 // function totalOfNum(one, two, three = 1) {
