@@ -165,3 +165,20 @@ const transformToObjects = (numberArray) => {
 console.log(transformToObjects([1, 2, 3]));
 
 // ----------------------DESTRUCTURING---------------------------
+
+// Pulls the data in the order which it is in the array.
+// stores it to a variable
+const [ford, dodge, acura, honda, toyota] = allCars;
+console.log(ford, dodge, acura, honda, toyota);
+
+// Destructuring objects requires that the variable you are destructuring to have the same name as
+// the object property name.
+// Order does not matter
+const testObj = {
+	name: 'a',
+	area: 'vancouver',
+};
+
+//Using a colon and a variable, this is known as an ALIAS when destructuring objects
+const { area: city, name } = testObj;
+console.log(city, name);
