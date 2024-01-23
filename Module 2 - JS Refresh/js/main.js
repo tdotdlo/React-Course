@@ -10,6 +10,8 @@ console.log(value);
 // This will group ALL exports (NOT EXPORT DEFAULTS NOT INCLUDED) and import it as an object from the other JS file
 import * as objName from './example.js';
 
+// ---------------------- FUNCTIONS ----------------------------
+
 console.log(objName.firstLine);
 console.log(objName.weather);
 
@@ -66,3 +68,31 @@ console.log(answer); // 6
 
 answer = totalOfNum(10, 5, 2);
 console.log(answer); //4
+
+// ---------------------- OBJECTS & CLASS----------------------------
+// used to group different values together
+const user = {
+	// key: value
+	name: 'Darren',
+	age: 38,
+	color: 'Navy',
+	// functions in objs are known as METHODS
+	greet() {
+		console.log(this.name + ' ' + this.color);
+	},
+};
+
+console.log(user.name);
+user.greet();
+
+// Using a class to obstantiate an obj - contains a blueprint on how to create a new object
+class House {
+	constructor(material, address) {
+		this.material = material;
+		this.address = address;
+	}
+}
+
+// creates instance of an object
+const cambie = new House('Oak Wood', '462 Cambie Street');
+console.log(cambie);
