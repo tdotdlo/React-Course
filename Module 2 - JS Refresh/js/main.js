@@ -272,3 +272,5 @@ setTimeout(() => {
 setTimeout(function () {
 	console.log('This is set timeout using an anonymous fn');
 }, 4000);
+
+const cars = make;
