@@ -52,16 +52,16 @@ const sumOfnum = fnWithReturnVal(2, 4);
 console.log(sumOfnum);
 
 // Create a fn that accepts three values and returns the result of the operations
-function totalOfNum(one, two, three = 1) {
-	return (one / two) * three;
-}
+// function totalOfNum(one, two, three = 1) {
+// 	return (one / two) * three;
+// }
 
 // Arrow Fn
-// const totalOfNum = (one, two, three) => (one/two) * 3;
+const totalOfNum = (one, two, three = 3) => (one / two) * three;
 
 // Output
 let answer = totalOfNum(10, 5);
-console.log(answer); // 2
+console.log(answer); // 6
 
 answer = totalOfNum(10, 5, 2);
 console.log(answer); //4
