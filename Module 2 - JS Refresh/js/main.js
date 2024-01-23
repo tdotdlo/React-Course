@@ -231,3 +231,21 @@ const customer = {
 };
 
 console.log(customer);
+
+// ----------------------CONTROL STATEMENTS---------------------------
+
+// IF STATEMENT - code will check if conditions are met. If not it will go to the next iteration
+// const tempPass = prompt('Enter a temp password');
+
+// if (tempPass.length < 6) {
+// 	console.log('Password is too short');
+// } else {
+// 	console.log('Password has been accepted');
+// }
+
+// FOR LOOP - will iterate through an iterable variable until the end.
+const hasbroToys = ['Cars', 'Batman', 'Barbie'];
+
+for (let toys of hasbroToys) {
+	console.log(toys);
+}
