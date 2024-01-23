@@ -96,3 +96,66 @@ class House {
 // creates instance of an object
 const cambie = new House('Oak Wood', '462 Cambie Street');
 console.log(cambie);
+
+// ----------------------ARRAYS & ARRAY METHODS----------------------------
+// Creates a list of values of the same TYPE of data
+
+const typeOfCars = ['Acura', 'Honda', 'Toyota'];
+console.log(typeOfCars);
+
+// Removes last element of array
+typeOfCars.pop();
+console.log(typeOfCars);
+
+//Adds to an the END of an array
+typeOfCars.push('Toyota');
+console.log(typeOfCars);
+
+// Array of object - cars
+const allCars = [
+	{
+		make: 'Ford',
+		country: 'America',
+	},
+	{
+		make: 'Dodge',
+		country: 'America',
+	},
+	{
+		make: 'Acura',
+		country: 'Japan',
+	},
+	{
+		make: 'Honda',
+		country: 'Japan',
+	},
+	{
+		make: 'Toyota',
+		country: 'Japan',
+	},
+];
+
+console.log(allCars);
+
+// filters through the array and tests each element within the array
+// If true, it will create a shallow copy of the new array and passes it to a new variable - 'japanOnly'
+// '-1' means not found
+const japanOnly = allCars.filter((everyCar) => everyCar.country !== 'America');
+console.log(japanOnly);
+
+// Searches through each element of the array to match the testing condition
+// If true, it will return the index number of the first element in the array
+// '-1' means not found
+const carsMadeInJapan = allCars.findIndex((everyCar) => everyCar.country === 'Japan');
+console.log(carsMadeInJapan);
+
+// Goes through each element of the array and manipulates the data within it.
+// This will alter the original array.
+allCars.map((eachCar, i) => (eachCar.made = 2000 + i));
+console.log(allCars);
+
+const transformToObjects = (numberArray) => {
+	return numberArray.map((eachNumber) => ({ val: eachNumber }));
+};
+
+console.log(transformToObjects([1, 2, 3]));
