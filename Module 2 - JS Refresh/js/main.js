@@ -249,3 +249,26 @@ const hasbroToys = ['Cars', 'Batman', 'Barbie'];
 for (let toys of hasbroToys) {
 	console.log(toys);
 }
+
+// ----------------------FUNCTIONS AS VALUES---------------------------
+
+// passing an anonymous arrow function to a constant and defining the the fn
+const time = () => {
+	console.log('This will be set timeout using a declared function');
+};
+
+// This will invoke the function right away since there are parentheses and return the value
+// That is invoked in the function
+// setTimeout(time(), 1000);
+
+// This will NOT INVOKE the function right away since you are passing the fn as a VALUE.
+setTimeout(time, 2000);
+
+// This will not invoke the function right away because you are passing anonymous fn.
+setTimeout(() => {
+	console.log('This is set timeout using an arrow fn');
+}, 3000);
+
+setTimeout(function () {
+	console.log('This is set timeout using an anonymous fn');
+}, 4000);
