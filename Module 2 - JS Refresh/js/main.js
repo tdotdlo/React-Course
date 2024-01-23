@@ -182,3 +182,52 @@ const testObj = {
 //Using a colon and a variable, this is known as an ALIAS when destructuring objects
 const { area: city, name } = testObj;
 console.log(city, name);
+
+// ----------------------SPREAD OPERATOR---------------------------
+// This will create nested arrays rather than pulling the data from each array
+const fruits = ['Apple', 'Blueberries', 'Oranges'];
+
+// nestedArr[0] = fruits array
+// nestedArr[1] = allCars array of objs
+const nestedArr = [fruits, allCars];
+console.log(nestedArr);
+
+// By using the spread operator, this pull the data from each array and the data
+// Into a new array.
+const kids = [
+	{
+		name: 'Tommy',
+		age: 3,
+	},
+	{
+		name: 'Aiden',
+		age: 4,
+	},
+	{
+		name: 'Juliette',
+		age: 2,
+	},
+];
+
+const toys = ['Cars', 'Batman', 'Barbie'];
+
+// mergedArrays[0] = {name: 'Tommy', age: 3}
+// mergedARrays[1] = {name: 'Aiden', age: 4}
+// etc etc
+const mergedArrays = [...kids, ...toys];
+console.log(mergedArrays);
+
+// Spread operator for objs
+const food = {
+	type: 'sushi',
+	country: 'Korea',
+};
+
+// By spreading within an object, it will copy the key value pairs over from the obj food to customer obj
+const customer = {
+	name: 'Gloria',
+	position: 'General Manager',
+	...food,
+};
+
+console.log(customer);
