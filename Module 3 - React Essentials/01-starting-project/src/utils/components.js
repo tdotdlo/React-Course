@@ -6,4 +6,9 @@ export const coreConceptsInfo = [
 		description: 'The core UI Building Block',
 		image: components,
 	},
+	{
+		title: 'Components',
+		description: 'The core UI Building Block',
+		image: components,
+	},
 ];
