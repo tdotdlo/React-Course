@@ -44,15 +44,17 @@ export const App = () => {
 			<main>
 				<h2>Core Concepts for React</h2>
 				<section id='core-concepts'>
-					<ul>
+					<div className='core-concepts-container'>
 						{coreConceptsInfo.map((eachItem) => (
-							<CoreConcept
-								conceptImage={eachItem.image}
-								conceptHeader={eachItem.title}
-								conceptDescription={eachItem.description}
-							/>
+							<ul>
+								<CoreConcept
+									conceptImage={eachItem.image}
+									conceptHeader={eachItem.title}
+									conceptDescription={eachItem.description}
+								/>
+							</ul>
 						))}
-					</ul>
+					</div>
 				</section>
 			</main>
 		</div>

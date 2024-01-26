@@ -53,13 +53,6 @@ main {
 	margin: auto;
 }
 
-#core-concepts {
-	padding: 2rem;
-	border-radius: 6px;
-	background-color: #140524;
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-}
-
 main h2 {
 	text-align: center;
 	font-family: 'Roboto Condensed', sans-serif;
@@ -67,14 +60,24 @@ main h2 {
 	color: #a18aba;
 }
 
-#core-concepts ul {
+/* Card */
+#core-concepts {
+	padding: 2rem;
+	border-radius: 6px;
+	background-color: #140524;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.core-concepts-container {
+	display: flex;
+	gap: 2rem;
+}
+
+.core-concepts-container ul {
 	list-style: none;
 	padding: 0;
 	margin: 0;
-	display: flex;
-	/* flex-direction: column; */
 	gap: 2rem;
-	/* flex-wrap: wrap; */
 	justify-content: center;
 }
 
@@ -87,6 +90,7 @@ main h2 {
 	height: 4rem;
 	width: 6rem;
 	object-fit: cover;
+	display: inlin;
 }
 
 #core-concepts li h3 {
