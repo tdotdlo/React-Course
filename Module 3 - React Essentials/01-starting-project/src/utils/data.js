@@ -28,3 +28,5 @@ export const coreConceptsInfo = [
 		image: stateImage,
 	},
 ];
+
+export const headerDescriptions = ['Fundamental', 'Core', 'Crucial'];

@@ -1,10 +1,9 @@
-import { coreConceptsInfo } from './utils/components.js';
+import { coreConceptsInfo, headerDescriptions } from './utils/data.js';
 
 import atom from './assets/react-core-concepts.png';
 
+// Header Component
 const Header = () => {
-	const headerDescriptions = ['Fundamental', 'Core', 'Crucial'];
-
 	const randomInt = (max) => {
 		return Math.floor(Math.random() * (max + 1));
 	};
@@ -21,6 +20,7 @@ const Header = () => {
 	);
 };
 
+// Core Concept  - Card Component
 const CoreConcept = ({ conceptHeader, conceptDescription, conceptImage }) => {
 	return (
 		<>
@@ -45,12 +45,12 @@ export const App = () => {
 				<h2>Core Concepts for React</h2>
 				<section id='core-concepts'>
 					<div className='core-concepts-container'>
-						{coreConceptsInfo.map((eachItem) => (
+						{coreConceptsInfo.map((eachConcept) => (
 							<ul>
 								<CoreConcept
-									conceptImage={eachItem.image}
-									conceptHeader={eachItem.title}
-									conceptDescription={eachItem.description}
+									conceptImage={eachConcept.image}
+									conceptHeader={eachConcept.title}
+									conceptDescription={eachConcept.description}
 								/>
 							</ul>
 						))}
