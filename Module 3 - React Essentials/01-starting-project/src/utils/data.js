@@ -3,7 +3,7 @@ import jsxImage from '../assets/jsx-ui.png';
 import propsImage from '../assets/config.png';
 import stateImage from '../assets/state-mgmt.png';
 
-export const coreConceptsInfo = [
+const coreConceptsInfo = [
 	{
 		title: 'Components',
 		description: 'The core UI Building Block',
@@ -29,4 +29,8 @@ export const coreConceptsInfo = [
 	},
 ];
 
-export const headerDescriptions = ['Fundamental', 'Core', 'Crucial'];
+const headerDescriptions = ['Fundamental', 'Core', 'Crucial'];
+
+const buttonContent = ['Components', 'JSX', 'Props', 'State'];
+
+export { coreConceptsInfo, headerDescriptions, buttonContent };
