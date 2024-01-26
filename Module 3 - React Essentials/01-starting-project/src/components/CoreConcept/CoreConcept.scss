@@ -1,0 +1,40 @@
+/* Card */
+#core-concepts {
+	padding: 2rem;
+	border-radius: 6px;
+	background-color: #140524;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+
+	& li {
+		width: 10rem;
+		text-align: center;
+	}
+
+	& li img {
+		height: 4rem;
+		width: 6rem;
+		object-fit: cover;
+		display: inlin;
+	}
+
+	& li h3 {
+		margin: 0.5rem 0;
+	}
+
+	& li p {
+		font-size: 0.9rem;
+	}
+}
+
+.core-concepts-container {
+	display: flex;
+	gap: 2rem;
+
+	& ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		gap: 2rem;
+		justify-content: center;
+	}
+}

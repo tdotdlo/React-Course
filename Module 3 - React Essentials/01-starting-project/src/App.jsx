@@ -1,41 +1,8 @@
-import { coreConceptsInfo, headerDescriptions } from './utils/data.js';
+// Named imports use curly braces to import the file
+import { Header } from './components/Header/Header.jsx';
+import { CoreConcept } from './components/CoreConcept/CoreConcept.jsx';
 
-import atom from './assets/react-core-concepts.png';
-
-// Header Component
-const Header = () => {
-	const randomInt = (max) => {
-		return Math.floor(Math.random() * (max + 1));
-	};
-
-	const description = headerDescriptions[randomInt(2)];
-	return (
-		<header>
-			{/* {atom} - dynamic value expression  */}
-			<img src={atom} alt='Stylized atom' />
-			<h1>React Essentials</h1>
-			{/* {description - dynamic value expression} */}
-			<p>{description} React concepts you will need for almost any app you are going to build!</p>
-		</header>
-	);
-};
-
-// Core Concept  - Card Component
-const CoreConcept = ({ conceptHeader, conceptDescription, conceptImage }) => {
-	return (
-		<>
-			<li>
-				<img src={conceptImage} alt={conceptHeader} />
-			</li>
-			<li>
-				<h3>{conceptHeader}</h3>
-			</li>
-			<li>
-				<p>{conceptDescription}</p>
-			</li>
-		</>
-	);
-};
+import { coreConceptsInfo } from './utils/data.js';
 
 export const App = () => {
 	return (
@@ -45,14 +12,13 @@ export const App = () => {
 				<h2>Core Concepts for React</h2>
 				<section id='core-concepts'>
 					<div className='core-concepts-container'>
-						{coreConceptsInfo.map((eachConcept) => (
-							<ul>
-								<CoreConcept
-									conceptImage={eachConcept.image}
-									conceptHeader={eachConcept.title}
-									conceptDescription={eachConcept.description}
-								/>
-							</ul>
+						{coreConceptsInfo.map((eachConcept, i) => (
+							<CoreConcept
+								conceptImage={eachConcept.image}
+								conceptHeader={eachConcept.title}
+								conceptDescription={eachConcept.description}
+								key={`${i + 1}`}
+							/>
 						))}
 					</div>
 				</section>
