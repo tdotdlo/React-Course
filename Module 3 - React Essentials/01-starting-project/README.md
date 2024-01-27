@@ -10,8 +10,12 @@ Also I have added a README.md file to track my progress and will be using it as 
 
 Another thing I have started looking into was how to use the markup language correctly. The source I used for this basic file is [https://www.markdownguide.org/basic-syntax/](Basic Syntax | Markdown Guide)
 
-**UPDATE**
+## Topics that were Refreshed
 
 ### props.children
 
 This be the content which is between the <component> content </component>
+
+### onClick
+
+Rather than using **document.querySelector** like you would in vanilla JS, you would use a special prop / attribute to an element so that it will act like a **querySelector** but it is associated with the element itself.

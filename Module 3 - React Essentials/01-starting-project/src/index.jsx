@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom/client';
 
 import { App } from './App.jsx';
-import './index.css';
+import './index.scss';
 
 // This queries the index.html doc to look for the element with the id of 'root'.
 // It is a div which is in the index.html file and NOT in the App.jsx file.

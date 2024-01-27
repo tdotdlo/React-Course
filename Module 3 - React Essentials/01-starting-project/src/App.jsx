@@ -6,6 +6,10 @@ import { SubMenuButton } from './components/SubMenuButton/SubMenuButton.jsx';
 import { coreConceptsInfo, buttonContent } from './utils/data.js';
 
 export const App = () => {
+	const handleClick = (tabCaption) => {
+		console.log(tabCaption);
+	};
+
 	return (
 		<div>
 			<Header />
@@ -26,8 +30,18 @@ export const App = () => {
 				<section id='examples'>
 					<h2>Examples</h2>
 					<menu>
+						{/* onUserClick prop passes the action down to the component 
+						so when the action happens, it will be on the component
+						itself */}
 						{buttonContent.map((eachLabel) => (
-							<SubMenuButton>{eachLabel}</SubMenuButton>
+							// If you are passing a parameter to the function, use an anonymous
+							// fn. Otherwise, the fn will run right away.
+
+							// By creating an anonymous fn, this will control how arguments
+							// / parameters are passed in the fn
+							<SubMenuButton onUserClick={() => handleClick({ eachLabel })}>
+								{eachLabel}
+							</SubMenuButton>
 						))}
 					</menu>
 				</section>
