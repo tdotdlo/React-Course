@@ -6,7 +6,8 @@ export const SubMenuButton = ({ children, onUserClick }) => {
 
 	return (
 		<li>
-			{/* Must use a callback fn in the prop if you put parentheses */}
+			{/* Must use a callback fn in the component attribute if you have parentheses 
+			the fn is no longer a callback fn and it will run right away*/}
 			<button onClick={onUserClick}>{buttContent}</button>
 		</li>
 	);

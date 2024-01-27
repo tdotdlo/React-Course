@@ -2,6 +2,14 @@
 
 This is my first app which I have built from the React Complete Guide (incl. React Router and Redux) course with Max (Acadamind.) I have used it as a refresher on the React skills which I have learnt during my time at BrainStation.
 
+## Day 6
+
+I realized I was trying to destructure an array and pass the values to the SubMenuButton Component causing the app to crash everytime the state was changed in the menu content section. It was a silly mistake.
+
+## Topics that are refreshed
+
+### useState
+
 ## Day 5 - Refactoring and Components
 
 I have refactored some of the code in order to continue expand my knowledge and refactored code so that it was a bit more of a challenge for myself. While the pacing has been good, I have incorporated the basic SCSS syntax to help the styling look a little bit cleaner. I also learned that the styling sheet is NOT scoped to a specific component. It is scoped globally which means that if you were to use the tag or className elsewhere in the file, it will still be styled based off of that stylesheet.
@@ -14,8 +22,4 @@ Another thing I have started looking into was how to use the markup language cor
 
 ### props.children
 
-This be the content which is between the <component> content </component>
-
 ### onClick
-
-Rather than using **document.querySelector** like you would in vanilla JS, you would use a special prop / attribute to an element so that it will act like a **querySelector** but it is associated with the element itself.

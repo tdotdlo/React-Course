@@ -1,17 +1,40 @@
 // Named imports use curly braces to import the file
+import { useState } from 'react';
+
 import { Header } from './components/Header/Header.jsx';
 import { CoreConcept } from './components/CoreConcept/CoreConcept.jsx';
 import { SubMenuButton } from './components/SubMenuButton/SubMenuButton.jsx';
 
-import { coreConceptsInfo, buttonContent } from './utils/data.js';
+import { coreConceptsInfo, buttonContent, dynamicContentMenu } from './utils/data.js';
 
 export const App = () => {
+	const [topicChosen, setTopicChosen] = useState();
+
 	const handleClick = (tabCaption) => {
-		console.log(tabCaption);
+		setTopicChosen(tabCaption);
+
+		// This will printout the current state of the variable topicChosen until the component fn is re-rendered. It will always show the previous state.
+		//since the component has not been 'refreshed'
+		console.log(topicChosen);
 	};
 
+	// Option 3 - JSX to show content conditionally
+	let dynamicContent = <p>Please Select a Topic!</p>;
+
+	if (topicChosen) {
+		dynamicContent = (
+			<div id='tab-content'>
+				<h3>{dynamicContentMenu[topicChosen].title}</h3>
+				<p>{dynamicContentMenu[topicChosen].description}</p>
+				<pre>
+					<code>{dynamicContentMenu[topicChosen].code}</code>
+				</pre>
+			</div>
+		);
+	}
+
 	return (
-		<div>
+		<>
 			<Header />
 			<main>
 				<h2>Core Concepts for React</h2>
@@ -33,19 +56,43 @@ export const App = () => {
 						{/* onUserClick prop passes the action down to the component 
 						so when the action happens, it will be on the component
 						itself */}
-						{buttonContent.map((eachLabel) => (
+						{buttonContent.map((eachLabel, i) => (
 							// If you are passing a parameter to the function, use an anonymous
 							// fn. Otherwise, the fn will run right away.
 
 							// By creating an anonymous fn, this will control how arguments
 							// / parameters are passed in the fn
-							<SubMenuButton onUserClick={() => handleClick({ eachLabel })}>
+							<SubMenuButton key={i + 1} onUserClick={() => handleClick(eachLabel)}>
 								{eachLabel}
 							</SubMenuButton>
 						))}
 					</menu>
+					{/* Option 1 - Using Ternary Operator to show content conditionally */}
+					{/* {topicChosen ? (
+						<div id='tab-content'>
+							<h3>{dynamicContentMenu[topicChosen].title}</h3>
+							<p>{dynamicContentMenu[topicChosen].description}</p>
+							<pre>
+								<code>{dynamicContentMenu[topicChosen].code}</code>
+							</pre>
+						</div>
+					) : (
+						<p>Please select a topic!</p>
+					)} */}
+					{/* Option 2 - Using && Symbols to show content conditionally  */}
+					{/* {!topicChosen && <p>Please select a topic!</p>}
+					{topicChosen && (
+						<div id='tab-content'>
+							<h3>{dynamicContentMenu[topicChosen].title}</h3>
+							<p>{dynamicContentMenu[topicChosen].description}</p>
+							<pre>
+								<code>{dynamicContentMenu[topicChosen].code}</code>
+							</pre>
+						</div> 
+					)}*/}
+					{dynamicContent}
 				</section>
 			</main>
-		</div>
+		</>
 	);
 };
