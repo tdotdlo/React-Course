@@ -8,8 +8,14 @@ I have refactored some of the code in order to continue expand my knowledge and 
 
 Also I have added a README.md file to track my progress and will be using it as a method of journalling until I get my note taking application to continue to jot down what my progress and journey through the course as time progresses.
 
-<<<<<<< HEAD
-Another thing I have started looking into was how to use the markup language correctly. The source I used for this basic file is [https://www.markdownguide.org/basic-syntax/] (Basic Syntax | Markdown Guide)
-=======
 Another thing I have started looking into was how to use the markup language correctly. The source I used for this basic file is [https://www.markdownguide.org/basic-syntax/](Basic Syntax | Markdown Guide)
->>>>>>> 9f55882652109fbc655a7964345ad254eb9494ad
+
+## Topics that were Refreshed
+
+### props.children
+
+This be the content which is between the <component> content </component>
+
+### onClick
+
+Rather than using **document.querySelector** like you would in vanilla JS, you would use a special prop / attribute to an element so that it will act like a **querySelector** but it is associated with the element itself.
