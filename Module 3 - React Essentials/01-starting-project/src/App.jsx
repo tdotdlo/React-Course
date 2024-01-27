@@ -8,14 +8,13 @@ import { SubMenuButton } from './components/SubMenuButton/SubMenuButton.jsx';
 import { coreConceptsInfo, buttonContent, dynamicContentMenu } from './utils/data.js';
 
 export const App = () => {
-	const [topicChosen, setTopicChosen] = useState();
+	const [topicChosen, setTopicChosen] = useState(undefined);
 
 	const handleClick = (tabCaption) => {
-		setTopicChosen(tabCaption);
+		setTopicChosen(tabCaption.toLowerCase());
 
 		// This will printout the current state of the variable topicChosen until the component fn is re-rendered. It will always show the previous state.
 		//since the component has not been 'refreshed'
-		console.log(topicChosen);
 	};
 
 	// Option 3 - JSX to show content conditionally
@@ -53,16 +52,22 @@ export const App = () => {
 				<section id='examples'>
 					<h2>Examples</h2>
 					<menu>
-						{/* onUserClick prop passes the action down to the component 
-						so when the action happens, it will be on the component
-						itself */}
 						{buttonContent.map((eachLabel, i) => (
 							// If you are passing a parameter to the function, use an anonymous
 							// fn. Otherwise, the fn will run right away.
 
 							// By creating an anonymous fn, this will control how arguments
 							// / parameters are passed in the fn
-							<SubMenuButton key={i + 1} onUserClick={() => handleClick(eachLabel)}>
+
+							// onUserClick prop passes the action down to the component
+							// so when the action happens, it will be on the component
+							// itself
+
+							<SubMenuButton
+								key={i + 1}
+								selectedTopic={topicChosen === eachLabel}
+								onUserClick={() => handleClick(eachLabel)}
+							>
 								{eachLabel}
 							</SubMenuButton>
 						))}
