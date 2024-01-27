@@ -8,7 +8,7 @@ I have refactored some of the code in order to continue expand my knowledge and 
 
 Also I have added a README.md file to track my progress and will be using it as a method of journalling until I get my note taking application to continue to jot down what my progress and journey through the course as time progresses.
 
-Another thing I have started looking into was how to use the markup language correctly. The source I used for this basic file is [https://www.markdownguide.org/basic-syntax/](Basic Syntax | Markdown Guide)
+Another thing I have started looking into was how to use the markup language correctly. The source I used for this basic file is https://www.markdownguide.org/basic-syntax/ (Basic Syntax | Markdown Guide)
 
 ## Topics that were Refreshed
 
