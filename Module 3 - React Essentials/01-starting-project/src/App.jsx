@@ -11,26 +11,26 @@ export const App = () => {
 	const [topicChosen, setTopicChosen] = useState(undefined);
 
 	const handleClick = (tabCaption) => {
-		setTopicChosen(tabCaption.toLowerCase());
+		setTopicChosen(tabCaption);
 
 		// This will printout the current state of the variable topicChosen until the component fn is re-rendered. It will always show the previous state.
 		//since the component has not been 'refreshed'
+		console.log(topicChosen);
 	};
 
 	// Option 3 - JSX to show content conditionally
-	let dynamicContent = <p>Please Select a Topic!</p>;
 
-	if (topicChosen) {
-		dynamicContent = (
-			<div id='tab-content'>
-				<h3>{dynamicContentMenu[topicChosen].title}</h3>
-				<p>{dynamicContentMenu[topicChosen].description}</p>
-				<pre>
-					<code>{dynamicContentMenu[topicChosen].code}</code>
-				</pre>
-			</div>
-		);
-	}
+	const dynamicContent = topicChosen ? (
+		<div id='tab-content'>
+			<h3>{dynamicContentMenu[topicChosen.toLowerCase()].title}</h3>
+			<p>{dynamicContentMenu[topicChosen.toLowerCase()].description}</p>
+			<pre>
+				<code>{dynamicContentMenu[topicChosen.toLowerCase()].code}</code>
+			</pre>
+		</div>
+	) : (
+		<p>Please Select a Topic </p>
+	);
 
 	return (
 		<>
