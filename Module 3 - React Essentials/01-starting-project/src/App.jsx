@@ -19,7 +19,6 @@ export const App = () => {
 	};
 
 	// Option 3 - JSX to show content conditionally
-
 	const dynamicContent = topicChosen ? (
 		<div id='tab-content'>
 			<h3>{dynamicContentMenu[topicChosen.toLowerCase()].title}</h3>
@@ -64,7 +63,6 @@ export const App = () => {
 							// onUserClick prop passes the action down to the component
 							// so when the action happens, it will be on the component
 							// itself
-
 							<SubMenuButton
 								key={i + 1}
 								selectedTopic={topicChosen === eachLabel}
@@ -75,6 +73,7 @@ export const App = () => {
 						))}
 					</menu>
 					{/* Option 1 - Using Ternary Operator to show content conditionally */}
+
 					{/* {topicChosen ? (
 						<div id='tab-content'>
 							<h3>{dynamicContentMenu[topicChosen].title}</h3>
@@ -87,6 +86,7 @@ export const App = () => {
 						<p>Please select a topic!</p>
 					)} */}
 					{/* Option 2 - Using && Symbols to show content conditionally  */}
+
 					{/* {!topicChosen && <p>Please select a topic!</p>}
 					{topicChosen && (
 						<div id='tab-content'>
