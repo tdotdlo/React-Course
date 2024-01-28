@@ -1,7 +1,3 @@
-// Even though that this is now in it's own .scss file, this will still style any component or
-// any HTML tag that is using the <header>. It is not exclusive to the component itself, rather
-// the whole entire app / webpage. This CSS file is not SCOPED.
-
 header {
 	text-align: center;
 	margin: 3rem 0;

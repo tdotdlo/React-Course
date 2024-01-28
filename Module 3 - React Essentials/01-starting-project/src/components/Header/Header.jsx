@@ -12,10 +12,8 @@ export const Header = () => {
 	const description = headerDescriptions[randomInt(2)];
 	return (
 		<header>
-			{/* {atom} - dynamic value expression  */}
 			<img src={atom} alt='Stylized atom' />
 			<h1>React Essentials</h1>
-			{/* {description - dynamic value expression} */}
 			<p>{description} React concepts you will need for almost any app you are going to build!</p>
 		</header>
 	);

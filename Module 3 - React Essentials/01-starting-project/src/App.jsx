@@ -1,4 +1,3 @@
-// Named imports use curly braces to import the file
 import { useState } from 'react';
 
 import { Header } from './components/Header/Header.jsx';
@@ -12,19 +11,12 @@ export const App = () => {
 
 	const handleClick = (tabCaption) => {
 		setTopicChosen(tabCaption);
-
-		// This will printout the current state of the variable topicChosen until the component fn is re-rendered. It will always show the previous state.
-		//since the component has not been 'refreshed'
-		console.log(topicChosen);
 	};
 
-	// Option 3 - JSX to show content conditionally
 	const dynamicContent = topicChosen ? (
 		<div id='tab-content'>
 			<h3>{dynamicContentMenu[topicChosen.toLowerCase()].title}</h3>
 			<p>{dynamicContentMenu[topicChosen.toLowerCase()].description}</p>
-
-			{/* <pre> Will keep the way text is formatted in document  */}
 			<pre>
 				<code>{dynamicContentMenu[topicChosen.toLowerCase()].code}</code>
 			</pre>
@@ -54,15 +46,6 @@ export const App = () => {
 					<h2>Examples</h2>
 					<menu>
 						{buttonContent.map((eachLabel, i) => (
-							// If you are passing a parameter to the function, use an anonymous
-							// fn. Otherwise, the fn will run right away.
-
-							// By creating an anonymous fn, this will control how arguments
-							// / parameters are passed in the fn
-
-							// onUserClick prop passes the action down to the component
-							// so when the action happens, it will be on the component
-							// itself
 							<SubMenuButton
 								key={i + 1}
 								selectedTopic={topicChosen === eachLabel}
@@ -72,31 +55,6 @@ export const App = () => {
 							</SubMenuButton>
 						))}
 					</menu>
-					{/* Option 1 - Using Ternary Operator to show content conditionally */}
-
-					{/* {topicChosen ? (
-						<div id='tab-content'>
-							<h3>{dynamicContentMenu[topicChosen].title}</h3>
-							<p>{dynamicContentMenu[topicChosen].description}</p>
-							<pre>
-								<code>{dynamicContentMenu[topicChosen].code}</code>
-							</pre>
-						</div>
-					) : (
-						<p>Please select a topic!</p>
-					)} */}
-					{/* Option 2 - Using && Symbols to show content conditionally  */}
-
-					{/* {!topicChosen && <p>Please select a topic!</p>}
-					{topicChosen && (
-						<div id='tab-content'>
-							<h3>{dynamicContentMenu[topicChosen].title}</h3>
-							<p>{dynamicContentMenu[topicChosen].description}</p>
-							<pre>
-								<code>{dynamicContentMenu[topicChosen].code}</code>
-							</pre>
-						</div> 
-					)}*/}
 					{dynamicContent}
 				</section>
 			</main>
