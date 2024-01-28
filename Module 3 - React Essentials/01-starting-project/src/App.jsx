@@ -24,6 +24,8 @@ export const App = () => {
 		<div id='tab-content'>
 			<h3>{dynamicContentMenu[topicChosen.toLowerCase()].title}</h3>
 			<p>{dynamicContentMenu[topicChosen.toLowerCase()].description}</p>
+
+			{/* <pre> Will keep the way text is formatted in document  */}
 			<pre>
 				<code>{dynamicContentMenu[topicChosen.toLowerCase()].code}</code>
 			</pre>
