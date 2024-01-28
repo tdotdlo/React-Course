@@ -8,7 +8,7 @@ import { SubMenuButton } from './components/SubMenuButton/SubMenuButton.jsx';
 import { coreConceptsInfo, buttonContent, dynamicContentMenu } from './utils/data.js';
 
 export const App = () => {
-	const [topicChosen, setTopicChosen] = useState();
+	const [topicChosen, setTopicChosen] = useState(undefined);
 
 	const handleClick = (tabCaption) => {
 		setTopicChosen(tabCaption);
@@ -19,19 +19,19 @@ export const App = () => {
 	};
 
 	// Option 3 - JSX to show content conditionally
-	let dynamicContent = <p>Please Select a Topic!</p>;
+	const dynamicContent = topicChosen ? (
+		<div id='tab-content'>
+			<h3>{dynamicContentMenu[topicChosen.toLowerCase()].title}</h3>
+			<p>{dynamicContentMenu[topicChosen.toLowerCase()].description}</p>
 
-	if (topicChosen) {
-		dynamicContent = (
-			<div id='tab-content'>
-				<h3>{dynamicContentMenu[topicChosen].title}</h3>
-				<p>{dynamicContentMenu[topicChosen].description}</p>
-				<pre>
-					<code>{dynamicContentMenu[topicChosen].code}</code>
-				</pre>
-			</div>
-		);
-	}
+			{/* <pre> Will keep the way text is formatted in document  */}
+			<pre>
+				<code>{dynamicContentMenu[topicChosen.toLowerCase()].code}</code>
+			</pre>
+		</div>
+	) : (
+		<p>Please Select a Topic </p>
+	);
 
 	return (
 		<>
@@ -53,21 +53,27 @@ export const App = () => {
 				<section id='examples'>
 					<h2>Examples</h2>
 					<menu>
-						{/* onUserClick prop passes the action down to the component 
-						so when the action happens, it will be on the component
-						itself */}
 						{buttonContent.map((eachLabel, i) => (
 							// If you are passing a parameter to the function, use an anonymous
 							// fn. Otherwise, the fn will run right away.
 
 							// By creating an anonymous fn, this will control how arguments
 							// / parameters are passed in the fn
-							<SubMenuButton key={i + 1} onUserClick={() => handleClick(eachLabel)}>
+
+							// onUserClick prop passes the action down to the component
+							// so when the action happens, it will be on the component
+							// itself
+							<SubMenuButton
+								key={i + 1}
+								selectedTopic={topicChosen === eachLabel}
+								onUserClick={() => handleClick(eachLabel)}
+							>
 								{eachLabel}
 							</SubMenuButton>
 						))}
 					</menu>
 					{/* Option 1 - Using Ternary Operator to show content conditionally */}
+
 					{/* {topicChosen ? (
 						<div id='tab-content'>
 							<h3>{dynamicContentMenu[topicChosen].title}</h3>
@@ -80,6 +86,7 @@ export const App = () => {
 						<p>Please select a topic!</p>
 					)} */}
 					{/* Option 2 - Using && Symbols to show content conditionally  */}
+
 					{/* {!topicChosen && <p>Please select a topic!</p>}
 					{topicChosen && (
 						<div id='tab-content'>
