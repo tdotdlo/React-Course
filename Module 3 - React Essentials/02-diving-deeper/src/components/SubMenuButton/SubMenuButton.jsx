@@ -5,7 +5,7 @@ export const SubMenuButton = ({ children, onUserClick, selectedTopic }) => {
 
 	return (
 		<li>
-			<button className={selectedTopic ? 'active' : undefined} onClick={onUserClick}>
+			<button type='button' className={selectedTopic ? 'active' : undefined} onClick={onUserClick}>
 				{buttContent}
 			</button>
 		</li>
