@@ -32,7 +32,9 @@ export const ExamplesSection = () => {
 					<SubMenuButton
 						key={i + 1}
 						selectedTopic={topicChosen === eachLabel}
-						onUserClick={() => handleClick(eachLabel)}
+						onUserClick={() => {
+							handleClick(eachLabel);
+						}}
 					>
 						{eachLabel}
 					</SubMenuButton>

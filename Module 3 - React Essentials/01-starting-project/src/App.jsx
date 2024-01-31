@@ -6,6 +6,7 @@ import { CoreConceptSection } from './components/CoreConceptSection/CoreConceptS
 import { ExamplesSection } from './components/ExamplesSection/ExamplesSection.jsx';
 
 export const App = () => {
+	console.log('App Rendered');
 	return (
 		<>
 			<Header />
