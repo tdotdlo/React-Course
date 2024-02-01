@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { SubMenuButton } from '../SubMenuButton/SubMenuButton';
-
+import { Section } from '../Section';
 import { buttonContent, dynamicContentMenu } from '../../utils/data';
 
 import './ExamplesSection.scss';
 
 export const ExamplesSection = () => {
+	// Moved State here so that only this component is rendered and NOT the entire app
 	const [topicChosen, setTopicChosen] = useState(undefined);
 
 	const handleClick = (tabCaption) => {
@@ -25,22 +26,25 @@ export const ExamplesSection = () => {
 	);
 
 	return (
-		<section id='examples'>
+		<Section id='examples'>
 			<h2>Examples</h2>
 			<menu>
 				{buttonContent.map((eachLabel, i) => (
 					<SubMenuButton
 						key={i + 1}
 						selectedTopic={topicChosen === eachLabel}
-						onUserClick={() => {
-							handleClick(eachLabel);
-						}}
+						// Do not to set a custom prop because it was defined by us
+						// onUserClick={() => {
+						// 	handleClick(eachLabel);
+						// }}
+						// Since we are using the spread operator in the component, you would just call in the built in event handler as the prop
+						onClick={() => handleClick(eachLabel)}
 					>
 						{eachLabel}
 					</SubMenuButton>
 				))}
 			</menu>
 			{dynamicContent}
-		</section>
+		</Section>
 	);
 };

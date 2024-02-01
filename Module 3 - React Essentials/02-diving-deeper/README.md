@@ -2,6 +2,10 @@
 
 This is my first app which I have built from the React Complete Guide (incl. React Router and Redux) course with Max (Acadamind.) I have used it as a refresher on the React skills which I have learnt during my time at BrainStation.
 
+## Day 7
+
+Moved all components to it's on separate function component so that when state changes, it only re-renders that component on it's own.
+
 ## Day 6
 
 I realized I was trying to destructure an array and pass the values to the SubMenuButton Component causing the app to crash everytime the state was changed in the menu content section. It was a silly mistake.

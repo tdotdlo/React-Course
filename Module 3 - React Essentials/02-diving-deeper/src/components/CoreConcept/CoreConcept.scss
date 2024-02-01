@@ -21,9 +21,11 @@
 	}
 }
 
-.core-concepts-container {
+.core-concepts__container {
 	display: flex;
 	gap: 2rem;
+	justify-content: center;
+	width: 100%;
 
 	& ul {
 		list-style: none;
