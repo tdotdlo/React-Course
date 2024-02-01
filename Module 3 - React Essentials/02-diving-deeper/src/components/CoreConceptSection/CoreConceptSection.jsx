@@ -8,8 +8,6 @@ import './CoreConceptSection.scss';
 export const CoreConceptSection = () => {
 	return (
 		<>
-			{/* <h2>Core Concepts for React</h2> */}
-
 			<Section title='Core Concepts for React'>
 				<section id='core-concepts'>
 					<div className='core-concepts__container'>

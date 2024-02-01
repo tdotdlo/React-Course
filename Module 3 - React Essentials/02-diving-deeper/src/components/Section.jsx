@@ -1,6 +1,7 @@
 // {...variableName} = rest operator - obj groups together all props
 
 export const Section = ({ title, children, ...componentAttributes }) => {
+	// Logs all the obj key: value pairs
 	console.log(componentAttributes);
 	// This will remapp the prop value to sectionContent
 	const sectionContent = children;
