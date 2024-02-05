@@ -1,35 +1,61 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Button } from './components/Button/Button';
+import { HomeIcon } from './components/HomeIcon';
+import { PlusIcon } from './components/PlusIcon';
 
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
-
-export default App
+export const App = () => {
+	return (
+		<div id='app'>
+			<section>
+				<h2>Filled Button (Default)</h2>
+				<p>
+					{/* Default - Children prop  */}
+					<Button>Default</Button>
+				</p>
+				<p>
+					{/* Filled (Default) - Children prop  */}
+					<Button mode='filled'>Filled (Default)</Button>
+				</p>
+			</section>
+			<section>
+				<h2>Button with Outline</h2>
+				<p>
+					{/* Outline - Children prop  */}
+					<Button mode='outline'>Outline</Button>
+				</p>
+			</section>
+			<section>
+				<h2>Text-only Button</h2>
+				<p>
+					{/* Text - Children prop  */}
+					<Button mode='text'>Text</Button>
+				</p>
+			</section>
+			<section>
+				<h2>Button with Icon</h2>
+				<p>
+					{/* Home - Children prop  */}
+					{/* Icon Component receiving HomeIcon component*/}
+					<Button Icon={HomeIcon}>Home</Button>
+				</p>
+				<p>
+					{/* Icon Comopnent receiving PlusIcon component */}
+					<Button Icon={PlusIcon} mode='text'>
+						Add
+					</Button>
+				</p>
+			</section>
+			<section>
+				<h2>Buttons Should Support Any Props</h2>
+				<p>
+					{/* Disabled - Children Prop */}
+					<Button mode='filled' disabled>
+						Disabled
+					</Button>
+				</p>
+				<p>
+					<Button onClick={() => console.log('Clicked!')}>Click me</Button>
+				</p>
+			</section>
+		</div>
+	);
+};
