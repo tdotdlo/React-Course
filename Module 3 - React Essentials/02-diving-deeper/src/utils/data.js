@@ -79,5 +79,4 @@ const dynamicContentMenu = {
 
 const headerDescriptions = ['Fundamental', 'Core', 'Crucial'];
 const buttonContent = ['Components', 'JSX', 'Props', 'State'];
-
 export { coreConceptsInfo, headerDescriptions, buttonContent, dynamicContentMenu };
