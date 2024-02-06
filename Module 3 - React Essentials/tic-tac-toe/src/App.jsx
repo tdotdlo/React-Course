@@ -1,5 +1,12 @@
+// import { Header } from './components/Header/Header';
+
 import './App.scss';
 
 export const App = () => {
-	return <h1>React Tic-Tac-Toe</h1>;
+	return (
+		<>
+			{/* <Header /> */}
+			<main></main>
+		</>
+	);
 };
