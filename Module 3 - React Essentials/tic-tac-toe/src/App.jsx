@@ -1,4 +1,5 @@
 import { Player } from './components/Player/Player';
+import { Gameboard } from './components/Gameboard/Gameboard';
 
 import './App.scss';
 
@@ -14,7 +15,7 @@ export const App = () => {
 					<Player name='Player 2' symbol='O' />
 				</ol>
 				{/* Game board */}
-				Gameboard
+				<Gameboard />
 			</div>
 		</main>
 	);

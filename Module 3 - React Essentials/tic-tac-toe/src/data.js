@@ -1,10 +1,5 @@
-export const players = [
-	{
-		name: 'Player 1',
-		symbol: 'X',
-	},
-	{
-		name: 'Player 2',
-		symbol: 'O',
-	},
+export const emptyGameboard = [
+	[null, null, null],
+	[null, null, null],
+	[null, null, null],
 ];
