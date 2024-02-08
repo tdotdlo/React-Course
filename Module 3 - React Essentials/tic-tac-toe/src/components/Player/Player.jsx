@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import './Player.scss';
 
-export const Player = ({ name, symbol }) => {
+export const Player = ({ name, symbol, isActive }) => {
 	const [isEditing, setIsEditing] = useState(false);
 	const [playerName, setPlayerName] = useState(name);
 
@@ -19,7 +19,7 @@ export const Player = ({ name, symbol }) => {
 		// setIsEditing(!isEditing); true
 
 		// This works the way it's supposed too
-		setIsEditing((editing) => !editing); //true
+		setIsEditing((editing) => !editing); //true - Will do the opposite of the boolean value stored in the state variable
 		// setIsEditing((editing) => !editing); false
 	};
 
@@ -40,7 +40,7 @@ export const Player = ({ name, symbol }) => {
 	);
 
 	return (
-		<li>
+		<li className={isActive ? 'active' : undefined}>
 			<span className='player'>
 				{/* Displays JSX from displayNameContent */}
 				{displayNameContent}

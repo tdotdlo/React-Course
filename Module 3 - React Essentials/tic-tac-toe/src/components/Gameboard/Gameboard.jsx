@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { emptyGameboard } from '../../data';
 
-export const Gameboard = () => {
+export const Gameboard = ({ onPlayerTurn, activePlayerPiece }) => {
 	// sets thee state of the gameboard to be the multi-dimensional array
 	const [playerMove, setPlayerMove] = useState(emptyGameboard);
 
@@ -17,10 +17,12 @@ export const Gameboard = () => {
 
 			prevPlayerMove.map((innerArray, i) => console.log(innerArray, i));
 			const updatedBoard = [...prevPlayerMove.map((innerArray) => [...innerArray])];
-			updatedBoard[playerMoveRow][playerMoveCol] = 'X';
+			updatedBoard[playerMoveRow][playerMoveCol] = activePlayerPiece;
 
 			return updatedBoard;
 		});
+
+		onPlayerTurn();
 	};
 
 	return (

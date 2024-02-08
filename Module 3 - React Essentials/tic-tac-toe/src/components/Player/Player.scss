@@ -11,8 +11,8 @@
 		animation: pulse 2s infinite ease-in-out;
 	}
 
-	& highlight-player li.active .player-name,
-	& highlight-player li.active .player-symbol {
+	& .highlight-player li.active .player-name,
+	& .highlight-player li.active .player-symbol {
 		color: #f6e35a;
 	}
 
