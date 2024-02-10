@@ -8,13 +8,11 @@ export const Gameboard = ({ onPlayerTurn, activePlayerPiece }) => {
 	// handles where the piece goes when a player clicks on a square
 	// parameters consist of rowIndex and colIndex bc we need to update that field
 	const handlePlayerMove = (playerMoveRow, playerMoveCol) => {
-		console.warn('clicked');
 		// prevPlayerMove (curr state) is called by React automatically. This will update
 		// the STATE immediately rather than having a time in the future
 		setPlayerMove((prevPlayerMove) => {
 			// This will update the origial array in memory when the state update by React happens
 			// prevPlayerMove[rowMoved][colMoved] = 'X';
-
 			prevPlayerMove.map((innerArray, i) => console.log(innerArray, i));
 			const updatedBoard = [...prevPlayerMove.map((innerArray) => [...innerArray])];
 			updatedBoard[playerMoveRow][playerMoveCol] = activePlayerPiece;

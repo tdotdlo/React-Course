@@ -2,11 +2,13 @@ import { useState } from 'react';
 
 import { Player } from './components/Player/Player';
 import { Gameboard } from './components/Gameboard/Gameboard';
+import { Log } from './components/Log';
 
 import './App.scss';
 
 export const App = () => {
 	const [activePlayer, setActivePlayer] = useState('X');
+	// const [playerTurn, setPlayerTurn] = useState([]);
 
 	const handlePlayerTurn = () => {
 		setActivePlayer((currentPlayer) => (currentPlayer === 'X' ? 'O' : 'X'));
@@ -25,6 +27,7 @@ export const App = () => {
 				{/* Game board */}
 				<Gameboard onPlayerTurn={handlePlayerTurn} activePlayerPiece={activePlayer} />
 			</div>
+			<Log />
 		</main>
 	);
 };
