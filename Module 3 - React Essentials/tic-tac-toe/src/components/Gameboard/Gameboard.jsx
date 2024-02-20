@@ -14,6 +14,8 @@ export const Gameboard = ({ onPlayerTurn, activePlayerPiece }) => {
 			// This will update the origial array in memory when the state update by React happens
 			// prevPlayerMove[rowMoved][colMoved] = 'X';
 			prevPlayerMove.map((innerArray, i) => console.log(innerArray, i));
+
+      // Doing a deep copy of the original array since an array is a reference in memory and you do not want to affect the original multi-dimensional array. 
 			const updatedBoard = [...prevPlayerMove.map((innerArray) => [...innerArray])];
 			updatedBoard[playerMoveRow][playerMoveCol] = activePlayerPiece;
 

@@ -7,8 +7,9 @@ import { Log } from './components/Log';
 import './App.scss';
 
 export const App = () => {
+	// This will set the state for turn and the gameboard since both components need the state in order to update the component. Lifting the state makes the most sense. 
+	const [playerTurn, setPlayerTurn] = useState([]);
 	const [activePlayer, setActivePlayer] = useState('X');
-	// const [playerTurn, setPlayerTurn] = useState([]);
 
 	const handlePlayerTurn = () => {
 		setActivePlayer((currentPlayer) => (currentPlayer === 'X' ? 'O' : 'X'));
