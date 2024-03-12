@@ -7,12 +7,32 @@ import { Log } from './components/Log';
 import './App.scss';
 
 export const App = () => {
-	// This will set the state for turn and the gameboard since both components need the state in order to update the component. Lifting the state makes the most sense. 
+	// This will set the state for turn and the gameboard since both components need the state in order to update the component. Lifting the state makes the most sense.
 	const [playerTurn, setPlayerTurn] = useState([]);
 	const [activePlayer, setActivePlayer] = useState('X');
 
-	const handlePlayerTurn = () => {
+	const handlePlayerTurn = (rowIndex, colIndex) => {
 		setActivePlayer((currentPlayer) => (currentPlayer === 'X' ? 'O' : 'X'));
+
+		// creates a new array so that the original array is not mutated
+		// also sets up
+		setPlayerTurn((prevPlayerTurn) => {
+			let currentPlayer = 'X';
+
+			if (prevPlayerTurn.length > 0 && prevPlayerTurn[0].player === 'X') {
+				currentPlayer = 'O';
+			}
+
+			const updatedBoard = [
+				{
+					square: { row: rowIndex, col: colIndex },
+					player: currentPlayer,
+				},
+				...prevPlayerTurn,
+			];
+
+			return updatedBoard;
+		});
 	};
 
 	return (
@@ -26,7 +46,7 @@ export const App = () => {
 					<Player name='Player 2' symbol='O' isActive={activePlayer === 'O'} />
 				</ol>
 				{/* Game board */}
-				<Gameboard onPlayerTurn={handlePlayerTurn} activePlayerPiece={activePlayer} />
+				<Gameboard onPlayerTurn={handlePlayerTurn} currentTurn={playerTurn} />
 			</div>
 			<Log />
 		</main>

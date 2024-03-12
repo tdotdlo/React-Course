@@ -14,10 +14,6 @@ export const Player = ({ name, symbol, isActive }) => {
 
 		// setIsEditing(!isEditing);
 
-		// Relies in the previous state, so therefore it is not updated right away.
-		// setIsEditing(!isEditing); true
-		// setIsEditing(!isEditing); true
-
 		// This works the way it's supposed too
 		setIsEditing((editing) => !editing); //true - Will do the opposite of the boolean value stored in the state variable
 		// setIsEditing((editing) => !editing); false
